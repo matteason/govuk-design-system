@@ -38,7 +38,8 @@
           text: "View cookies",
           href: "/cookies"
         }
-      ]
+      ],
+      classes: "js-cookie-banner-message"
     },
     {
       html: acceptHtml,
@@ -46,9 +47,11 @@
       hidden: true,
       actions: [
         {
-          text: "Hide this message"
+          text: "Hide this message",
+          classes: "js-cookie-banner-hide"
         }
-      ]
+      ],
+      classes: "js-cookie-banner-confirmation-accept"
     },
     {
       html: rejectHtml,
@@ -56,9 +59,13 @@
       hidden: true,
       actions: [
         {
-          text: "Hide this message"
+          text: "Hide this message",
+          attributes: {
+            "data-app-cookie-banner-hide": true
+          }
         }
-      ]
+      ],
+      classes: "js-cookie-banner-confirmation-reject"
     }
   ]
 }) }}

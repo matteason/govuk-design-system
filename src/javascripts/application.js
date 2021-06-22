@@ -1,4 +1,5 @@
 import BackToTop from './components/back-to-top.js'
+import CookieBanner from './components/cookie-banner.js'
 import common from 'govuk-frontend/govuk/common'
 import Example from './components/example.js'
 import AppTabs from './components/tabs.js'
@@ -48,3 +49,7 @@ new Search($searchContainer).init()
 // Initialise back to top
 var $backToTop = document.querySelector('[data-module="app-back-to-top"]')
 new BackToTop($backToTop).init()
+
+// Initialise cookie banner
+var $cookieBanner = document.querySelector('[data-module="govuk-cookie-banner"]')
+new CookieBanner($cookieBanner).init()
