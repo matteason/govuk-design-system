@@ -7,14 +7,14 @@ import Copy from './components/copy.js'
 import MobileNav from './components/mobile-navigation.js'
 import Search from './components/search.js'
 import OptionsTable from './components/options-table.js'
-import { getConsentCookie } from './cookie-functions.js'
+import { getConsentCookie, isValidConsentCookie } from './cookie-functions.js'
 import Analytics from './components/analytics.js'
 
 var nodeListForEach = common.nodeListForEach
 
 // Initialise analytics if consent is given
 var userConsent = getConsentCookie()
-if (userConsent && userConsent['analytics']) {
+if (userConsent && isValidConsentCookie(userConsent) && userConsent['analytics']) {
   Analytics()
 }
 
