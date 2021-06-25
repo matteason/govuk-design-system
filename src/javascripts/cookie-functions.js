@@ -34,7 +34,7 @@ const COOKIE_CATEGORIES = {
    * only allow adding cookies that are documented in this object, so they need
    * to be added here.
    */
-  CONSENT_COOKIE_NAME: 'essential'
+  [CONSENT_COOKIE_NAME]: 'essential'
 }
 
 /*
