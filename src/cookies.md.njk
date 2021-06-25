@@ -1,7 +1,93 @@
 ---
 title: Cookies
-layout: layout-archived.njk
-ignore_in_sitemap: true
+description: GOV.UK Design System puts small files (known as ‘cookies’) on your computer
+layout: layout-single-page.njk
 ---
 
-For up to date information, see [the privacy policy](/privacy-policy/).
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+{% set successNotificationBannerHtml %}
+  <p class="govuk-notification-banner__heading">
+    You’ve set your cookie preferences. <a class="govuk-notification-banner__link" href="#">Go back to the page you were looking at</a>.
+  </p>
+{% endset %}
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<div data-module="app-cookies-page">
+
+
+<div data-module="app-cookies-page__error-summary" hidden>
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes to accept analytics cookies",
+      href: "#analytics"
+    }
+  ]
+}) }}
+</div>
+
+
+<div data-module="app-cookies-page__success" hidden>
+{{ govukNotificationBanner({
+  type: "success",
+  html: successNotificationBannerHtml
+}) }}
+</div>
+
+
+<div class="app-prose-scope">
+<div></div> {# hack to allow Markdown later on #}
+
+
+# Cookies
+
+[GOV.UK Design System](https://design-system.service.gov.uk/) puts small files (known as ‘cookies’) on your computer.
+
+
+## Essential cookies (strictly necessary)
+
+
+## Analytics cookies (optional)
+
+<div data-module="app-cookies-page__option" hidden>
+{{ govukRadios({
+  name: "analytics",
+  fieldset: {
+    legend: {
+      text: "Do you want to accept analytics cookies?"
+    }
+  },
+  items: [
+    {
+      text: "Yes",
+      value: "yes"
+    },
+    {
+      text: "No",
+      value: "no"
+    }
+  ]
+}) }}
+</div>
+
+
+<div data-module="app-cookies-page__save" hidden>
+{{ govukButton({
+  text: 'Save cookie settings'
+}) }}
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
