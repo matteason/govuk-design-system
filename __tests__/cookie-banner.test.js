@@ -33,6 +33,14 @@ describe('Cookie banner', () => {
       const isCookieBannerHidden = await page.waitForSelector(COOKIE_BANNER_SELECTOR, { visible: false })
       expect(isCookieBannerHidden).toBeTruthy()
     })
+
+    it('when on the cookies page', async () => {
+      await page.setCookie({ name: 'design_system_cookies_policy', value: '{"analytics":true, "version":1', domain: 'design-system.service.gov.uk' })
+      await page.goto(`${baseUrl}/cookies/`, { waitUntil: 'load' })
+
+      const isCookieBannerHidden = await page.waitForSelector(COOKIE_BANNER_SELECTOR, { visible: false })
+      expect(isCookieBannerHidden).toBeTruthy()
+    })
   })
 
   describe('is visible', () => {
