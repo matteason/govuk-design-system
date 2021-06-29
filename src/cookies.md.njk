@@ -1,7 +1,118 @@
 ---
 title: Cookies
-layout: layout-archived.njk
-ignore_in_sitemap: true
+description: GOV.UK Design System puts small files (known as ‘cookies’) on your computer
+layout: layout-single-page-prose.njk
 ---
 
-For up to date information, see [the privacy policy](/privacy-policy/).
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+# Cookies
+
+[GOV.UK Design System](https://design-system.service.gov.uk/) puts small files (known as ‘cookies’) on your computer.
+
+These cookies are used across the GOV.UK Design System, which also includes
+GOV.UK Frontend and Prototype Kit websites. Your preferences will apply to all
+of these.
+
+We only set cookies when JavaScript is running in your browser and you’ve
+accepted them. If you choose not to run Javascript, the information on this
+page will not apply to you.
+
+Find out [how to manage cookies](https://ico.org.uk/for-the-public/online/cookies/).
+
+## Essential cookies (strictly necessary)
+
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    { text: "Name" },
+    { text: "Purpose"},
+    { text: "Expires"}
+  ],
+  rows: [
+    [
+      {text: "design-system-cookie-policy"},
+      {text: "Saves your cookie consent settings"},
+      {text: "1 year"}
+    ]
+  ]
+}) }}
+
+
+## Analytics cookies (optional)
+
+We use Google Analytics software to understand how people use the GOV.UK Design
+System. We do this to help make sure the site is meeting the needs of its users
+and to help us make improvements.
+
+We do not collect or store your personal information (for example your name or
+address) so this information cannot be used to identify who you are.
+
+We do not allow Google to use or share our analytics data.
+
+Google Analytics stores information about:
+
+  - the pages you visit
+  - how long you spend on each page
+  - how you arrived at the site
+  - what you click on while you have visiting the site
+  - the device and browser you are using
+
+Google Analytics sets the following cookies:
+
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    { text: "Cookie name" },
+    { text: "Default expiration time" },
+    { text: "Description" }
+  ],
+  rows: [
+    [
+      { text: "_ga" },
+      { text: "2 years" },
+      { text: "Used to distinguish users." }
+    ],
+    [
+      { text: "_gid" },
+      { text: "24 hours" },
+      { text: "Used to distinguish users." }
+    ],
+    [
+      { text: "_gat" },
+      { text: "1 minute" },
+      { text: "Used to throttle request rate. If Google Analytics is deployed via Google Tag Manager, this cookie will be named _dc_gtm_<property- id>." }
+    ],
+    [
+      { text: "__utma" },
+      { text: "2 years from set/update" },
+      { text: "Used to distinguish users and sessions. The cookie is created when the javascript library executes and no existing __utma cookies exists. The cookie is updated every time data is sent to Google Analytics." }
+    ],
+    [
+      { text: "__utmt" },
+      { text: "10 minutes" },
+      { text: "Used to throttle request rate." }
+    ],
+    [
+      { text: "__utmb" },
+      { text: "30 mins from set/update" },
+      { text: "Used to determine new sessions/visits. The cookie is created when the javascript library executes and no existing __utmb cookies exists. The cookie is updated every time data is sent to Google Analytics." }
+    ],
+    [
+      { text: "__utmc" },
+      { text: "End of browser session" },
+      { text: "Not used in ga.js. Set for interoperability with urchin.js. Historically, this cookie operated in conjunction with the __utmb cookie to determine whether the user was in a new session/visit." }
+    ],
+    [
+      { text: "__utmz" },
+      { text: "6 months from set/update" },
+      { text: "Stores the traffic source or campaign that explains how the user reached your site. The cookie is created when the javascript library executes and is updated every time data is sent to Google Analytics." }
+    ],
+    [
+      { text: "__utmv" },
+      { text: "2 years from set/update" },
+      { text: "Used to store visitor-level custom variable data. This cookie is created when a developer uses the _setCustomVar method with a visitor level custom variable. This cookie was also used for the deprecated _setVar method. The cookie is updated every time data is sent to Google Analytics." }
+    ]
+  ]
+}) }}
